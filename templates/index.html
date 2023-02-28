@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /> 
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Twitch Clip</title>
+  </head>
+  <body>
+    <div class="container" >
+      <div class="text-center p-3" style="margin-top: 80px;">
+        <h1 style="font-weight: 900; font-size: 55px;">
+          <span class="text-black m-2">3X</span>
+          <span class="red-text m-2">CONTENT
+          </span>
+        </h1>
+      </div>
+
+      <div style="padding-left: 20px;">
+        <img src="../static/images/twitch.gif" alt="twitch" style="width: 60px; margin-left: 40px;">
+        <span class="p-1" style="font-size: 20px; font-weight: 900;">Twitch Clips Compilation
+        </span>
+      </div>
+
+      <div class = "search-container">
+        <div class="d-flex flex-wrap items-align-baseline" style="margin-top: 2rem; margin-bottom: 1rem;">
+          <h2 style="font-size: 42px; font-weight: 900; font-family: fantasy;">Search Streamer or Game
+          </h2>
+        </div>
+        <form>
+          <div class="input-group">
+            <div class="form-outline">
+              <input id="search-input" type="search" placeholder="search..." class="form-control" value="" style="font-size: 18px; width: 300px">
+            </div>
+            <button id="search-button" type="button" onclick="searchfn()" class="btn btn-secondary">
+              <i class="fas fa-search">          
+              </i>
+            </button>
+          </div>  
+        </form>          
+      </div>
+
+      <div class = "select-container">
+        <div class="d-flex flex-wrap items-align-baseline" style="margin-top: 2rem; margin-bottom: 1rem;">
+          <h2 style="font-size: 42px; font-weight: 900;font-family: fantasy;">Select Clips
+          </h2>
+        </div>
+
+        <div class="clips_head">
+          <div class="clips_div">
+              <div class="clips_img">
+              <!-- <img src="./assets/images/avatar.png" alt="avatar" width="45px" height="46px"> -->
+              </div>
+              <div style="align-items: center">
+                  <div class="tenz_text">
+                    <!-- <p>TenZ <img src="./assets/images/check.png" alt="check"></p> -->
+                  </div>
+                  
+                  <div class="follow_text">
+                    <p>3.1M followers</p>
+                  </div>
+              </div>
+          </div>
+          <div class="select_div">
+              <select class="select" id="selectId">
+                  <option value="1">Top <div style = "height:20px; color:aqua"></div>24H</option>
+                  <option value="2">Top 7D</option>
+                  <option value="3">Top 30D</option>
+                  <option value="4">Top All</option>
+              </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow">
+        <div class="select-window">
+
+
+
+          <!-- <div class="im-1">
+            <div class="im-2" style="background-image: url(https://images.unsplash.com/photo-1587502624372-45627391a31f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMzE1NTd8MXwxfHNlYXJjaHwxfHxzZWF8ZW58MHx8fHwxNjY3MDY1MDI4&ixlib=rb-4.0.3&q=80&w=200);">  
+                <div class="im-3"> 
+                 <p class="font"> 0:04 </p>
+                </div>
+                <div class="im-4">    
+                 <p class="font"> 2.8K views </p>
+                </div>
+                <div class="im-5">   
+                  <p class="font">14 hours ago</p>
+                </div>
+            </div>
+            <div class="im-6">
+                <div class="im-7">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/516575-52x72.jpg" style="height:100%; width:100%; object-fit:contain;">    
+                </div> 
+                <div class="im-8">       
+                    <div class="im-9">
+                      <p class="font2" style="opacity:1; font: size 0.7vw;"> VAC on brax </p>
+                    </div>
+                    <div class="im-9">
+                      <p class="font2">tarik</p>
+                    </div>
+                    <div class="im-9">
+                      <p class="font2">Clipped by sylar917</p>
+                    </div>
+                </div>
+            </div>              
+          </div> -->
+
+
+
+
+
+
+
+          <!-- <div class="im-1">
+            <div class="im-2">      
+              <div class="im-3">    
+              </div>
+              <div class="im-4">    
+              </div>
+              <div class="im-5">    
+              </div>
+            </div>
+            <div class="im-6">
+              <div class="im-7"></div>  
+              <div class="im-8">        
+                <div class="im-9"></div>
+              </div>
+            </div>              
+          </div> -->
+
+
+        </div>
+      </div>
+      <form id="file-form" method="post" enctype="multipart/form-data">
+        <div class="file-dive">
+          <p class="select-title">Add Intro</p>
+          <input type="file" id="intro" name="intro" class="file-upload">
+        </div>
+
+        <div class="file-dive" style="margin-top:30px;">
+          <p class="select-title">Add Outro</p>
+          <input type="file" id="outro" name="outro" class="file-upload">
+        </div>
+        
+        <div class="file-dive" style="margin-top:30px;">
+          <p class="select-title">Add Transitions between clips</p>
+          <input type="file" id="trans" name="trans" class="file-upload">
+        </div>        
+      </form>
+      <div class="create_button">
+        <img src="../static/images/create-button2.png" onclick="create()" alt="" class="button-img">
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

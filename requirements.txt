@@ -1,0 +1,6 @@
+Flask
+selenium
+bs4
+pandas
+requests
+opencv-python
